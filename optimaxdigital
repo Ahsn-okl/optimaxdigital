@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiMax Digital | Comprehensive Marketing & Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">OptiMax Digital</h1>
+            <nav class="navbar">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
+    <section class="hero">
+        <div class="container">
+            <h2>Unlock Your Digital Potential</h2>
+            <p>From design to marketing, we've got you covered.</p>
+            <a href="#services" class="cta-button">Explore Services</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-category">
+                <h3>Design Services</h3>
+                <ul>
+                    <li>Logo Design</li>
+                    <li>Brand Style Guides</li>
+                    <li>Business Cards & Stationery</li>
+                    <li>Illustration</li>
+                    <li>Pattern Design</li>
+                </ul>
+            </div>
+            <div class="service-category">
+                <h3>Marketing Services</h3>
+                <ul>
+                    <li>Search Engine Optimization (SEO)</li>
+                    <li>Social Media Marketing</li>
+                    <li>Email Marketing</li>
+                    <li>Affiliate Marketing</li>
+                    <li>Public Relations</li>
+                </ul>
+            </div>
+            <div class="service-category">
+                <h3>Video Production</h3>
+                <ul>
+                    <li>Video Editing</li>
+                    <li>Explainer Videos</li>
+                    <li>3D Product Animation</li>
+                    <li>Social Media Videos</li>
+                    <li>Motion Graphics</li>
+                </ul>
+            </div>
+            <div class="service-category">
+                <h3>AI & Data Services</h3>
+                <ul>
+                    <li>AI Content Editing</li>
+                    <li>Data Analytics Consulting</li>
+                    <li>AI Chatbots</li>
+                    <li>AI Image Editing</li>
+                    <li>AI Strategy</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 OptiMax Digital. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+/* Services Section */
+.services {
+    background: #f4f4f4;
+    padding: 2rem 0;
+}
+.services .service-category {
+    margin-bottom: 2rem;
+}
+.services h3 {
+    color: #007BFF;
+}
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+.services ul li {
+    margin: 0.5rem 0;
+    color: #333;
+}
+// Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("OptiMax Digital Website Loaded");
+
+    // Scroll to sections smoothly
+    const navLinks = document.querySelectorAll('.navbar a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Contact Form Submission
+    const contactForm = document.querySelector('#contact form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Thank you for reaching out! We'll get back to you shortly.");
+            contactForm.reset(); // Clear the form
+        });
+    }
+});
